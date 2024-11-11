@@ -19,17 +19,17 @@
 
         .title {
             font-weight: bold; 
-            font-size: 20vh; 
-            margin-top: -10px;
+            font-size: 24vh; 
+            margin-top: -5vh;
         }
 
         .gallery-container {
-            margin-top: -28vh;
+            margin-top: -36vh;
         }
 
         .gallery {
             /* duration */
-            --d: 15s;
+            --d: 20s;
             display: grid;
             overflow: hidden;
             width: 100vw;
@@ -66,19 +66,23 @@
         }
 
         @keyframes slide {
-            30% {
+            0% {
+                transform: translate(0%);
+            }
+
+            20% {
                 transform: translate(1200%)
             }
 
-            50% {
+            35% {
                 transform: translate(800%)
             }
 
-            75% {
+            60% {
                 transform: translate(800%)
             }
 
-            75.01% {
+            60.01% {
                 transform: translate(-300%)
             }
         }
@@ -93,18 +97,18 @@
             <h1 class="title">Car Flip</h1>
             <div class="gallery-container">
                 <div class="gallery">
-                    <img src="./assets/car1.png" height="100%" width="100%" alt="car-image1">
-                    <img src="./assets/car2.png" height="100%" width="100%" alt="car-image2">
-                    <img src="./assets/car3.png" height="100%" width="100%" alt="car-image3">
-                    <img src="./assets/car4.png" height="100%" width="100%" alt="car-image4">
-                    <img src="./assets/car5.png" height="100%" width="100%" alt="car-image5">
-                    <img src="./assets/car6.png" height="100%" width="100%" alt="car-image6">
+                    <img src="./assets/car1.png" height="100%" width="100%" alt="car-image">
+                    <img src="./assets/car2.png" height="100%" width="100%" alt="car-image">
+                    <img src="./assets/car3.png" height="100%" width="100%" alt="car-image">
+                    <img src="./assets/car4.png" height="100%" width="100%" alt="car-image">
+                    <img src="./assets/car5.png" height="100%" width="100%" alt="car-image">
+                    <img src="./assets/car6.png" height="100%" width="100%" alt="car-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- script for chnaging color of title after each car get slides  -->
+    <!-- script for changing color of title after each car get slides  -->
     <script>
         // Array of colors to change the title text
         const colors = ['black', '#ebdb02', 'darkred', 'darkgreen', 'gray', '#0460c2'];
