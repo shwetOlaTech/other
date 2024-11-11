@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Point Inspection</title>
+    <style>
+         @page {
+            size: A4;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0px">
+    <div style="width: 210mm; height: 297mm; margin: 0; padding: 10px; box-sizing: border-box; background: #fff; border: 1px solid black; font-size: 12px;">
+        <span style="font-weight: 600; font-size: 22px; display: flex; justify-content: center; padding-top: 80px;">Multi-Point Inspection Checklist Per Manufacturer’s Recommendation</span>
+        <hr>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+            <div style="display: flex;">
+                <span style="display: flex;"><span>Customer Name:</span><div style="border-bottom: 1px solid black; width: 78mm;"></div></span>
+                <span style="display: flex;"><span>Year/Model:</span><div style="border-bottom: 1px solid black; width: 47mm;"></div></span>
+                <span style="display: flex;"><span>Date:</span><div style="border-bottom: 1px solid black; width: 30mm;"></div></span>
+            </div>
+            <div style="display: flex;">
+                <span style="display: flex;"><span>RO/Tag:</span><div style="border-bottom: 1px solid black; width: 41.5mm;"></div></span>
+                <span style="display: flex;"><span> Mileage:</span><div style="border-bottom: 1px solid black; width: 37mm;"></div></span>
+            </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; font-size: 10px; margin-top: 20px; text-align: center;">
+            <div style="border: 1px solid black; background-color: seagreen; color: white; padding: 2px; font-weight: 600;">OKAY AT THIS TIME</div>
+            <div style="border: 1px solid black; background-color: gold; color: black; padding: 2px; font-weight: 600;">MAY REQUIRE FUTURE ATTENTION</div>
+            <div style="border: 1px solid black; background-color: red; color: white; padding: 2px; font-weight: 600;">REQUIRES PROMPT ATTENTION</div>
+        </div>
+        <div style="display: flex; gap: 5px; margin-top: 10px;">
+            <div style="width: 52%;">
+                <div style="border: 1px solid black; text-align: center;">
+                    <div style="font-size: 10px; background-color: blue; color: white; font-weight: 600; padding: 3px; border-bottom: 1px solid black;">CHECK FLUID LEVELS AND FILL</div>
+                    <div style="display: flex; justify-content: space-between; padding: 0px 2px;">
+                        <table style="font-size: 9px;">
+                            <tr>
+                                <th>OK</th>
+                                <th>FILL</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td style="text-align: start; vertical-align: top">Engine Oil</td>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td style="text-align: start; vertical-align: top">Transmission</td>
+                            </tr>
+                        </table>
+                        <table style="font-size: 9px;">
+                            <tr>
+                                <th>OK</th>
+                                <th>FILL</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td style="text-align: start; vertical-align: top">Brake Reservoir</td>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td style="text-align: start; vertical-align: top">Window Washer</td>
+                            </tr>
+                        </table>
+                        <table style="font-size: 9px;">
+                            <tr>
+                                <th>OK</th>
+                                <th>FILL</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td style="text-align: start; vertical-align: top">Power Steering</td>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td style="text-align: start; vertical-align: top">Coolant Recover Reservoir</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <div style="font-size: 10px; background-color: blue; color: white; font-weight: 600; padding: 3px; border: 1px solid black; border-bottom: none; text-align: center;">RECOMMENDED SCHEDULE MAINTENANCE SERVICE</div>
+                        <table style="width: 100%; font-size: 10px; border-collapse: collapse;">
+                            <tr>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Oil Change</span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Fuel Filter</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Oil Filter</span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Cabin Air Filter</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Engine Air Filter</span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Spark Plugs</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Engine Coolant</span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Tire Rotation</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Transmission Fluid</span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Seat Filter</span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Transmission Filter</span>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span style="display: flex; align-items: center; gap: 4px; padding: 3px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                        <span>Accessory Drive Belt(s)</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+                <div style="margin-top: 18px;">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <span style="display: flex; gap: 2px;">
+                            <span>Comments:</span>
+                            <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                        </span>
+                        <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <div style="font-size: 10px; background-color: blue; color: white; font-weight: 600; padding: 3px; border: 1px solid black; text-align: center;">CHECK BATTERY</div>     
+                    <div style="display: flex; gap: 20px;">
+                        <img src="../media/pdf/stateOfHealth.png" alt="image" width="290px" >
+                        <div style="display: flex; flex-direction: column; width: 100%;">
+                            <span style="font-weight: 700; font-size: 12px;">Condition of Terminals</span>
+                            <span style="display: flex; margin-top: 5px; gap: 60px;">
+                                <span style="display: flex; gap: 4px; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                    <span style="font-size: 11px;">Good</span>
+                                </span>
+                                <span style="display: flex; gap: 4px; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                                    <span style="font-size: 11px;">Bad</span>
+                                </span>
+                            </span>
+                            <span style="font-size: 10px; margin-left: 20px;">(Clean if necessary)</span>
+                            <span style="display: flex; gap: 8px;">
+                                <span style="font-size: 11px; margin-left: 22px; font-weight: 600;">Declined Battery</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="white" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </span>
+                        </div>
+                    </div>     
+                </div>
+                <div style="margin-top: 20px;">
+                    <div style="font-size: 10px; background-color: blue; color: white; font-weight: 600; padding: 3px; border: 1px solid black; text-align: center; border-bottom: none;">CHECK BRAKES - MEASURE FRONT/REAR BRAKE LININGS</div>
+                    <div style="display: flex; border: 1px solid black; justify-content: space-between;">
+                            <table style="font-size: 11px; padding: 0px 8px; height: fit-content;">
+                                <tr>
+                                    <th>LF</th>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <th>LR</th>
+                                </tr>
+                            </table>
+                        <div style="margin-left: 40px;">
+                            <img src="../media/pdf/checkBrakes.png" alt="image">
+                        </div>
+                            <table style="font-size: 11px; padding: 0px 8px; height: fit-content;">
+                                <tr>
+                                    <th></th>
+                                    <th>RF</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="padding-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <th>RR</th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 10px; font-weight: 700; padding-top: 2px;">Declined Brake</td>
+                                    <td style="padding-top: 2px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="white" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div style="font-size: 10px; background-color: seagreen; color: white; font-weight: 600; padding: 3px; border: 1px solid black; text-align: center; border-top: none;">Over 5mm or 7/32” (Disc) or Over 2mm or 3/32” (Drum)</div>
+                    <div style="font-size: 10px; background-color: gold; color: black; font-weight: 600; padding: 3px; border: 1px solid black; text-align: center; border-top: none;">3 to 5mm or 4/32” to 7/32” (Disc) or 1.01 to 2mm (Drum) or 2/32” to 3/32”</div>
+                    <div style="font-size: 10px; background-color: red; color: white; font-weight: 600; padding: 3px; border: 1px solid black; text-align: center; border-top: none;">Less than 3mm or 4/32” (Disc) or 1mm or 2/32” or Less (Drum)</div>
+                    <div style="font-size: 11px; background-color: white; color: black; font-weight: 600; padding: 6px 16px; border: 1px solid black; text-align: center; border-top: none; display: flex; align-items: center; gap: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="pink" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                        <span style="font-weight: 700;">BRAKE MEASUREMENTS NOT TAKEN THIS SERVICE VISIT</span>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <span style="display: flex; gap: 2px;">
+                        <span>Comments:</span>
+                        <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                    </span>
+                </div>
+                <div style="margin-top: 40px;">
+                    <span style="display: flex; gap: 2px;">
+                        <span style="width: 125px; font-weight: 600;">Service Advisor:</span>
+                        <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                    </span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <span style="display: flex; gap: 2px;">
+                        <span style="width: 70px; font-weight: 600;">Technician:</span>
+                        <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                    </span>
+                </div>
+            </div>
+            <div style="width: 50%;">
+                <div>    
+                  <table style="width: 100%; font-size: 10px; border-collapse: collapse;">
+                        <tr style="background-color: blue; color: white; border: 1px solid black;">
+                            <td colspan="4" style="font-weight: 600; text-align: center; padding: 3px;">RECOMMENDED SCHEDULE MAINTENANCE SERVICE</td>
+                            <td style="font-size: 8px;">Declined</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;"></td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Operation of horn, interior lights, exterior lamps, turn signals, hazard and brake lamps</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;"></td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Radiator, heater and air-conditioning hoses for leaks and damage</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;"></td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Windshield for cracks, chips and pitting</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;"></td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Windshield washer spray, wiper operation and wiper blades</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Accessory drive belt(s)</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Brake system (including lines, hoses and parking brake) and wheel end for end-play and bearing noise</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Clutch operation (if equipped)</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Constant velocity (CV) drive axle boots (if equipped)</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Drive shaft, transmission, u-joint and shift linkage (if equipped) and lubricate (as needed)</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Engine Cooling system, hoses and clamps</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Exhaust system (leaks, damage, loose parts)</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Oil and/or fluid leaks</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Shocks/struts and other suspension components for leaks and/or damage</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg>
+                            </td>
+                            <td style="border: 1px solid black;">Steering and steering linkages</td>
+                            <td style="border: 1px solid black; text-align: center;">
+                                <input type="checkbox" style="border: 1px solid black;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black;" colspan="4">
+                                <span style="display: flex; gap: 4px;">
+                                    <span style="font-weight: 700; font-size: 9px; padding-top: 2px;">STATE INSPECTION DUE (IF APPLICABLE)</span>
+                                    <span style="display: flex; color: red; gap: 2px;">
+                                        <span style="display: flex; flex-direction: column;">
+                                            <span style="border-bottom: 1px solid red; padding-top: 10px; width: 40px;"></span>
+                                            <span style="font-size: 7px; text-align: center;">MONTH</span>
+                                        </span>
+                                        <span style="font-size: 12px; font-weight: 700;">/</span>
+                                        <span style="display: flex; flex-direction: column;">
+                                            <span style="border-bottom: 1px solid red; padding-top: 10px; width: 30px;"></span>
+                                            <span style="font-size: 7px; text-align: center;">DAY</span>
+                                        </span>
+                                        <span style="font-size: 12px; font-weight: 700;">/</span>
+                                        <span style="display: flex; flex-direction: column;">
+                                            <span style="border-bottom: 1px solid red; padding-top: 10px; width: 40px;"></span>
+                                            <span style="font-size: 7px; text-align: center;">YEAR</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td style="border: 1px solid black;"></td>
+                        </tr>
+                  </table>
+                </div>
+                <div style="margin-top: 10px;">
+                    <div style="display: flex; flex-direction: column; gap: 20px;">
+                        <span style="display: flex; gap: 2px;">
+                            <span>Comments:</span>
+                            <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                        </span>
+                        <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 6px;">
+                    <div style="font-size: 10px; background-color: blue; color: white; font-weight: 600; padding: 3px; border: 1px solid black; text-align: center; border-bottom: none;">CHECK TIRES</div>
+                    <div style="display: flex; border: 1px solid black; justify-content: space-between;">
+                            <table style="font-size: 11px; padding: 0px 6px; height: fit-content;">
+                                <tr>
+                                    <th>LF</th>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                    <td>7/32” or Greater</td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                    <td>4/32” to 6/32”</td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                    <td>3/32” or less</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                    <td style="padding-top: 10px;">7/32” or Greater</td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                    <td>4/32” to 6/32”</td>
+                                </tr>
+                                <tr>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                    <td>3/32” or less</td>
+                                </tr>
+                                <tr>
+                                    <th>LR</th>
+                                </tr>
+                            </table>
+                        <div style="display: flex; flex-direction: column; justify-content: space-between;">
+                            <span style="font-weight: 700; font-size: 12px; padding-top: 2px;">TREAD DEPTH</span>
+                            <img src="../media/pdf/tireCheck.png" alt="image" width="100px" style="padding-bottom: 12px;">
+                        </div>
+                            <table style="font-size: 11px; padding: 0px 6px; height: fit-content;">
+                                <tr>
+                                    <th></th>
+                                    <th>RF</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: end;">7/32” or Greater</td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: end;">4/32” to 6/32”</td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: end;">3/32” or less</td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 10px; text-align: end;">7/32” or Greater</td>
+                                    <td style="padding-top: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: end;">4/32” to 6/32”</td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: end;">3/32” or less</td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <th>RR</th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 10px; font-weight: 700; text-align: end;">Declined Brake</td>
+                                    <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="white" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; border: 1px solid black; border-top: none;">
+                        <table style="font-size: 11px; padding: 0px 6px;">
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <th>LF</th>
+                            </tr>
+                            <tr>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <th>LR</th>
+                            </tr>
+                        </table>
+                        <div>
+                            <p style="font-weight: 700; font-size: 12px;">WEAR PATTERN/DAMAGE</p>
+                        </div>
+                        <table style="font-size: 11px; padding: 0px 6px;">
+                            <tr>
+                                <th>RF</th>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                            </tr>
+                            <tr>
+                                <th>RR</th>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="seagreen" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="gold" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                                <td><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="red" class="bi bi-circle-fill" viewBox="0 0 16 16" style="border: 1px solid black; border-radius: 100%;"><circle cx="8" cy="8" r="8"/></svg></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="border: 1px solid black; border-top: none; padding: 4px 6px; font-size: 11px;">
+                        <span style="font-weight: 700;">TIRE WEAR INDICATES:</span>
+                        <div style="display: flex; justify-content: space-between; padding: 4px 0px;">
+                            <span style="display: flex; gap: 4px;">
+                                <div style="padding: 6px 20px; background-color: pink; border: 1px solid black;"></div>
+                                <span>Alignment Check Needed</span>
+                            </span>
+                            <span style="display: flex; gap: 4px;">
+                                <div style="padding: 6px 20px; background-color: pink; border: 1px solid black;"></div>
+                                <span>Wheel Balance Needed</span>
+                            </span>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 4px;">
+                                <span style="display: flex; gap: 2px;">
+                                    <span>Comments:</span>
+                                    <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                                </span>
+                        </div>
+                    </div>
+                    <div style="border: 1px solid black; border-top: none; padding: 4px 6px; font-size: 11px;">
+                        <span style="font-weight: 700;">TIRE PRESSURE SET TO FACTORY RECOMMENDED PSI:</span>
+                        <div style="display: flex; padding: 4px 0px; gap: 120px;">
+                            <span style="display: flex; gap: 4px;">
+                                <div style="padding: 6px 20px; background-color: pink; border: 1px solid black;"></div>
+                                <span>Front</span>
+                            </span>
+                            <span style="display: flex; gap: 4px;">
+                                <div style="padding: 6px 20px; background-color: pink; border: 1px solid black;"></div>
+                                <span>Rear</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 16px;">
+                    <span style="display: flex; gap: 2px;">
+                        <span style="width: 180px; font-weight: 600;">Customer Signature:</span>
+                        <div style="width: 100%; border-bottom: 1px solid black;"></div>
+                    </span>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
