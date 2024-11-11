@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Animation</title>
+
+    <style>
+        .container {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+        }
+
+        .subtitle {
+            margin-bottom: 0;
+        }
+
+        .title {
+            font-weight: bold; 
+            font-size: 20vh; 
+            margin-top: -10px;
+        }
+
+        .gallery-container {
+            margin-top: -28vh;
+        }
+
+        .gallery {
+            /* duration */
+            --d: 15s;
+            display: grid;
+            overflow: hidden;
+            width: 100vw;
+            position: relative;
+            z-index: 10;
+        }
+
+        .gallery>img {
+            grid-area: 1/1;
+            height: 440px; 
+            aspect-ratio: 1.5;
+            object-fit: cover;
+            animation: slide var(--d) linear infinite;
+        }
+
+        .gallery>img:nth-child(2) {
+            animation-delay: calc(1*var(--d)/-6)
+        }
+
+        .gallery>img:nth-child(3) {
+            animation-delay: calc(2*var(--d)/-6)
+        }
+
+        .gallery>img:nth-child(4) {
+            animation-delay: calc(3*var(--d)/-6)
+        }
+
+        .gallery>img:nth-child(5) {
+            animation-delay: calc(4*var(--d)/-6)
+        }
+
+        .gallery>img:nth-child(6) {
+            animation-delay: calc(5*var(--d)/-6)
+        }
+
+        @keyframes slide {
+            30% {
+                transform: translate(1200%)
+            }
+
+            50% {
+                transform: translate(800%)
+            }
+
+            75% {
+                transform: translate(800%)
+            }
+
+            75.01% {
+                transform: translate(-300%)
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h2 class="subtitle">Selling Car is so simple with</h2>
+            <h1 class="title">Car Flip</h1>
+            <div class="gallery-container">
+                <div class="gallery">
+                    <img src="./assets/car1.png" height="100%" width="100%" alt="car-image1">
+                    <img src="./assets/car2.png" height="100%" width="100%" alt="car-image2">
+                    <img src="./assets/car3.png" height="100%" width="100%" alt="car-image3">
+                    <img src="./assets/car4.png" height="100%" width="100%" alt="car-image4">
+                    <img src="./assets/car5.png" height="100%" width="100%" alt="car-image5">
+                    <img src="./assets/car6.png" height="100%" width="100%" alt="car-image6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- script for chnaging color of title after each car get slides  -->
+    <script>
+        // Array of colors to change the title text
+        const colors = ['black', '#ebdb02', 'darkred', 'darkgreen', 'gray', '#0460c2'];
+        const title = document.querySelector('.title');
+        const gallery = document.querySelector('.gallery');
+
+        let currentImageIndex = 0;
+
+        function changeTitleColor() {
+            title.style.color = colors[currentImageIndex];
+            currentImageIndex = (currentImageIndex + 1) % colors.length;
+        }
+
+        // Change the color after every slide transition
+        gallery.addEventListener('animationiteration', changeTitleColor);
+
+        changeTitleColor();
+    </script>
+
+</body>
+
+</html>
