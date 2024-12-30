@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock title %}</title>
+  <!-- Toastr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap icons  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> 
+   <!-- Chart.js library -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
+
+  <style>
+    .page-title {
+      color: rgb(0, 35, 66);
+      font-weight: 800;
+      font-size: 1.4rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-container {
+      box-shadow: 0 4px 10px rgba(76, 76, 77, 0.2);
+      padding: 0.8rem;
+      /* border-radius: 4px; */
+      background-color: white;
+      border: 0;
+      margin: 0;
+    }
+
+    .table {
+      font-size: 0.9rem;
+    }
+
+    .table-header {
+      background: linear-gradient(to top, rgb(0, 82, 85), rgba(45, 141, 145, 0.938));
+      /* background: linear-gradient(to top, rgb(0, 34, 63), rgb(26, 97, 138)); */
+      padding: 1.5vh 2vh;
+      color: white;
+    }
+
+    .table-heading {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .table-container {
+      font-size: 0.87rem;
+    }
+
+    .table-center thead th,
+    .table-center tbody tr td {
+      text-align: center;
+    }
+
+    .table thead th {
+      background: linear-gradient(to top, rgb(0, 34, 63), rgb(26, 97, 138));
+      color: white;
+      padding: 0.2rem;
+    }
+
+    .table td {
+      padding: 0.2rem;
+    }
+
+    .pagination-info-container {
+      font-size: 0.85rem;
+    }
+
+    .pagination {
+      justify-content: flex-end;
+    }
+
+    .page-link {
+      font-size: 0.75rem;
+      text-decoration: none;
+      color: rgba(1, 1, 80, 0.938);
+      padding: 0.3rem 0.7rem;
+      margin: 0;
+    }
+
+    /* Hide the extra rows initially */
+    .hidden-row {
+      display: none;
+    }
+
+    .modal-body label {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .modal-body input {
+      font-size: 0.9rem;
+    }
+
+    .modal-footer button {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .form input,
+    .form select,
+    .form textarea {
+      font-size: 0.9rem;
+    }
+
+    .form-table-header {
+      background: linear-gradient(to top, rgb(0, 34, 63), rgb(26, 97, 138));
+      padding: 0.3rem 1rem;
+      color: white;
+    }
+
+    .add-role-form .form-switch {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0;
+      align-items: center;
+    }
+
+    .add-role-form td {
+      padding: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .add-role-form td span {
+      font-size: 0.84rem;
+    }
+  </style>
+  <style>
+    .main-content {
+      margin-left: 200px;
+      padding: 4vh 1vh;
+      width: 100%;
+    }
+
+    .main-content .container {
+      margin-top: 30px;
+    }
+  </style>
+  {% block HeadContent %}{% endblock HeadContent %}
+</head>
+
+<body style="background-color: whitesmoke;">
+  <div class="d-flex" >
+    <section>
+      <!-- Sidebar -->
+      {% include 'isp_app/Layout/sidebar.html' %}
+    </section>
+    <section class="main-content ">
+      <section>
+        <!-- Header -->
+        {% include 'isp_app/Layout/header.html' %}
+      </section>
+      <main class="container">
+        <!-- Main Content Area -->
+         {% include 'isp_app/Dashboard/home.html' %}
+        {% include 'isp_app/Dashboard/addCircuitForm.html' %}
+        {% include 'isp_app/Dashboard/addRoleForm.html' %}
+        {% include 'isp_app/Dashboard/addEmployeeForm.html' %}
+        {% include 'isp_app/Dashboard/sampleTable.html' %}
+        {% block main %}
+
+        {% endblock main %}
+      </main>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Toastr JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  {% block javascript %}
+  {% endblock javascript %}
+</body>
+
+</html>

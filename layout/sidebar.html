@@ -1,0 +1,286 @@
+<style>
+    .sidebar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 210px;
+        background-color: rgb(0, 21, 39);
+        color: white;
+        padding: 0px 3px;
+        overflow-y: auto;
+    }
+
+    .sidebar-menu {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 7vh;
+    }
+
+    .sidebar-menu li {
+        padding : 1px 0px;
+        font-size: 15px;
+        margin-top: 2px;
+    }
+
+    .sidebar-menu a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+    .sidebar-menu a:hover {
+        background-color: rgb(16, 51, 82);
+    }
+
+    .sidebar-menu .submenu {
+        display: none;
+        margin-left: 10px;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .sidebar-menu .submenu li {
+        margin: 1px 0;
+    }
+
+    .sidebar-menu .active>a {
+        background-color: rgb(91, 111, 122);
+    }
+
+    .sidebar-menu .active .submenu li.active {
+        background-color: rgb(91, 111, 122);
+    }
+
+    .menu-with-submenu {
+        display: flex;
+        justify-content: space-between;
+        /* margin-top: 5px; */
+    }
+</style>
+
+<section class="sidebar">
+    <!-- Sidebar menu -->
+    <ul class="sidebar-menu">
+        <li>
+            <a href="#menu1" class="menu-toggle" onclick="setActiveMenu(event)">Dashboard</a>
+        </li>
+        <li>
+            <a href="{% url 'dashboard' %}" class="menu-toggle" onclick="setActiveMenu(event)">Dashboard</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 1)"><span
+                    class="menu-with-submenu">
+                    <span>Employee Management</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu1">
+                <li><a href="{% url 'employee_list' %}" class="submenu-item" onclick="setActiveSubmenu(event)">Employee</a></li>
+                <li><a href="{% url 'work_location_list' %}" class="submenu-item" onclick="setActiveSubmenu(event)">Work Location</a>
+                </li>
+                <li ><a href="{% url 'department_list' %}" class="submenu-item" onclick="setActiveSubmenu(event)">Department</a></li>
+                <li><a href="{% url 'designation_list' %}" class="submenu-item" onclick="setActiveSubmenu(event)">Designation</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#menu2" class="menu-toggle" onclick="setActiveMenu(event)">Circuit Management</a>
+        </li>
+        <li>
+            <a href="#menu3" class="menu-toggle" onclick="setActiveMenu(event)">Account Management</a>
+        </li>
+        <li>
+            <a href="#menu4" class="menu-toggle" onclick="setActiveMenu(event)">Roles Management</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 2)"><span
+                    class="menu-with-submenu">
+                    <span>Lead Management</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu2">
+                <li><a href="#submenu2-item1" class="submenu-item" onclick="setActiveSubmenu(event)">Lead</a></li>
+                <li><a href="#submenu2-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Closed Leads</a>
+                </li>
+                <li><a href="#submenu2-item3" class="submenu-item" onclick="setActiveSubmenu(event)">Fiber
+                        Feasibility</a></li>
+                <li><a href="#submenu2-item4" class="submenu-item" onclick="setActiveSubmenu(event)">RF Feasibility</a>
+                </li>
+                <li><a href="#submenu2-item5" class="submenu-item" onclick="setActiveSubmenu(event)">Project
+                        Feasibility</a></li>
+                <li><a href="#submenu2-item6" class="submenu-item" onclick="setActiveSubmenu(event)">Lead Type</a></li>
+                <li><a href="#submenu2-item7" class="submenu-item" onclick="setActiveSubmenu(event)">Lead Category</a>
+                </li>
+                <li><a href="#submenu2-item8" class="submenu-item" onclick="setActiveSubmenu(event)">Email Template</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 3)"><span
+                    class="menu-with-submenu">
+                    <span>Complaint Management</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu3">
+                <li><a href="#submenu3-item1" class="submenu-item" onclick="setActiveSubmenu(event)">Add Complaint</a>
+                </li>
+                <li><a href="#submenu3-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Open Complaint</a>
+                </li>
+                <li><a href="#submenu3-item3" class="submenu-item" onclick="setActiveSubmenu(event)">Resolved
+                        Complaint</a></li>
+                <li><a href="#submenu3-item4" class="submenu-item" onclick="setActiveSubmenu(event)">Closed
+                        Complaint</a></li>
+                <li><a href="#submenu3-item5" class="submenu-item" onclick="setActiveSubmenu(event)">Incident
+                        Complaint</a></li>
+                <li><a href="#submenu3-item6" class="submenu-item" onclick="setActiveSubmenu(event)">Incident
+                        Management</a></li>
+                <li><a href="#submenu3-item7" class="submenu-item" onclick="setActiveSubmenu(event)">Complaint
+                        Category</a></li>
+                <li><a href="#submenu3-item8" class="submenu-item" onclick="setActiveSubmenu(event)">Complaint Issue
+                        Found</a></li>
+                <li><a href="#submenu3-item9" class="submenu-item" onclick="setActiveSubmenu(event)">Escalation</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 4)"><span
+                    class="menu-with-submenu">
+                    <span>Billing and Collection</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu4">
+                <li><a href="#submenu4-item1" class="submenu-item" onclick="setActiveSubmenu(event)">Dashboard</a></li>
+                <li><a href="#submenu4-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Tally Report</a>
+                </li>
+                <li><a href="#submenu4-item3" class="submenu-item" onclick="setActiveSubmenu(event)">Invoice
+                        Generated</a></li>
+                <li><a href="#submenu4-item4" class="submenu-item" onclick="setActiveSubmenu(event)">Credit Note</a>
+                </li>
+                <li><a href="#submenu4-item5" class="submenu-item" onclick="setActiveSubmenu(event)">Approval
+                        Payments</a></li>
+                <li><a href="#submenu4-item6" class="submenu-item" onclick="setActiveSubmenu(event)">Approved
+                        Payments</a></li>
+                <li><a href="#submenu4-item7" class="submenu-item" onclick="setActiveSubmenu(event)">Ledger Book</a>
+                </li>
+                <li><a href="#submenu4-item8" class="submenu-item" onclick="setActiveSubmenu(event)">Customer Ledger</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 5)"><span
+                    class="menu-with-submenu">
+                    <span>POP Management</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu5">
+                <li><a href="#submenu5-item1" class="submenu-item" onclick="setActiveSubmenu(event)">Primary POP</a>
+                </li>
+                <li><a href="#submenu5-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Secondary POP</a>
+                </li>
+                <li><a href="#submenu5-item3" class="submenu-item" onclick="setActiveSubmenu(event)">POP Capacity</a>
+                </li>
+                <li><a href="#submenu5-item4" class="submenu-item" onclick="setActiveSubmenu(event)">POP Location</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 6)"><span
+                    class="menu-with-submenu">
+                    <span>IP Management</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu6">
+                <li><a href="#submenu6-item1" class="submenu-item" onclick="setActiveSubmenu(event)">IP Block</a></li>
+                <li><a href="#submenu6-item2" class="submenu-item" onclick="setActiveSubmenu(event)">POP IP</a></li>
+                <li><a href="#submenu6-item3" class="submenu-item" onclick="setActiveSubmenu(event)">Assign Client
+                        IPs</a></li>
+                <li><a href="#submenu6-item4" class="submenu-item" onclick="setActiveSubmenu(event)">List Assigned
+                        IPs</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#menu5" class="menu-toggle" onclick="setActiveMenu(event)">Switch Management</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-toggle" onclick="toggleSubmenu(event, 7)"><span
+                    class="menu-with-submenu">
+                    <span>Settings</span><span>→</span>
+                </span></a>
+            <ul class="submenu" id="submenu7">
+                <li><a href="{% url 'branch_list' %}" class="submenu-item" onclick="setActiveSubmenu(event)">Branch</a></li>
+                <li><a href="{% url 'zone_list' %}" class="submenu-item" onclick="setActiveSubmenu(event)">Zone</a></li>
+                <li><a href="#submenu7-item2" class="submenu-item" onclick="setActiveSubmenu(event)">State</a></li>
+                <li><a href="#submenu7-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Plans</a></li>
+                <li><a href="#submenu7-item2" class="submenu-item" onclick="setActiveSubmenu(event)">UOM</a></li>
+                <li><a href="#submenu7-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Item Group</a></li>
+                <li><a href="#submenu7-item2" class="submenu-item" onclick="setActiveSubmenu(event)">SMS Preferences</a>
+                </li>
+                <li><a href="#submenu7-item2" class="submenu-item" onclick="setActiveSubmenu(event)">Business Info</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#menu6" class="menu-toggle" onclick="setActiveMenu(event)">Logout</a>
+        </li>
+    </ul>
+</section>
+
+
+<script>
+    // Function to toggle submenu visibility
+    function toggleSubmenu(event, menuId) {
+        const submenu = document.getElementById('submenu' + menuId);
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+
+        const menuItem = event.target.closest('li');
+        menuItem.classList.toggle('active');
+    }
+
+    // Function to set active submenu
+    function setActiveSubmenu(event) {
+        const allSubmenus = document.querySelectorAll('.submenu-item');
+        allSubmenus.forEach(function (submenuItem) {
+            submenuItem.classList.remove('active');
+            submenuItem.style.backgroundColor = '';
+        });
+        const allMenus = document.querySelectorAll('.sidebar-menu > li');
+        allMenus.forEach(function (menuItem) {
+            const menuLink = menuItem.querySelector('a');
+            const submenu = menuItem.querySelector('.submenu');
+            if (menuLink) {
+                menuLink.style.backgroundColor = '';
+            }
+            if (submenu) {
+                submenu.style.display = 'none';
+            }
+            menuItem.classList.remove('active');
+        });
+
+        event.target.classList.add('active');
+
+        const parentMenu = event.target.closest('.submenu').previousElementSibling;
+        parentMenu.classList.add('active');
+
+        const submenu = parentMenu.nextElementSibling;
+        submenu.style.display = 'block';
+
+        parentMenu.style.backgroundColor = 'rgb(91, 111, 122)';
+        event.target.style.backgroundColor = 'rgb(91, 111, 122)';
+    }
+
+    // Function to handle the selection of a menu without a submenu
+    function setActiveMenu(event) {
+        const allMenuItems = document.querySelectorAll('.sidebar-menu li');
+        allMenuItems.forEach(function (menuItem) {
+            menuItem.classList.remove('active');
+            const menuLink = menuItem.querySelector('a');
+            if (menuLink) {
+                menuLink.style.backgroundColor = '';
+            }
+
+            const submenu = menuItem.querySelector('.submenu');
+            if (submenu) {
+                submenu.style.display = 'none';
+            }
+        });
+
+        event.target.closest('li').classList.add('active');
+    }
+
+</script>
+

@@ -1,0 +1,115 @@
+<style>
+    header {
+        width: calc(100% - 210px);
+        position: fixed;
+        top: 0;
+        left: 210px;
+        z-index: 1000;
+        height: 7vh;
+        background-color: rgb(200, 203, 209);   
+        border-bottom: 1px solid rgb(1, 62, 116);
+        color: black;
+        padding: 0px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .account {
+        display: flex;
+        gap: 8px;
+        background: linear-gradient(to top, rgb(0, 21, 39), rgb(31, 72, 107));
+        padding: 0vw 2vw;
+        height: 7vh;
+        align-items: center;
+        color: white;
+        justify-content: center;
+        margin-right: 1vw;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 7vh;
+        right: 2vw;
+        background-color: white;
+        color: black;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 200px;
+    }
+
+    .dropdown .link {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+
+    .dropdown .link:hover {
+        background-color: rgb(31, 72, 107);
+        border-radius: 8px;
+        color: white;
+    }
+    .log-out-button {
+        border: none;
+        background-color: white;
+        width: 100%;
+        text-align: left;
+    }
+    .log-out-button:hover{
+        color: red;
+        font-weight: 600;
+    }
+</style>
+
+<header>
+    <div class="headerContainer">
+        <div></div>
+        <div>
+            <div class="account" id="username" style="cursor: pointer;" onClick="openUserDropdown()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill"
+                    viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+                <h6 class="mt-2">{{ user.username }}</h6>
+            </div>
+            <!-- Dropdown menu -->
+            <div class="dropdown" id="userDropdown">
+                <a class="link" href="#">Profile</a>
+                <a class="link" href="#">About</a>
+                <form method="POST" action="{% url 'logout' %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class=" log-out-button">
+                        <span class="d-flex justify-content-between align-items-center">
+                            <span>Logout</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                                <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" stroke="currentColor" stroke-width="1"/>
+                              </svg>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Function to open the user dropdown
+    function openUserDropdown() {
+        var dropdown = document.getElementById("userDropdown");
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        } else {
+            dropdown.style.display = "block";
+        }
+    }
+</script>
