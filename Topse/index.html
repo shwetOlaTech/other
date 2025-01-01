@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <title>Topse</title>
+    <meta name="description" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav-orange.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/rsmenu-main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./assets/jsvectormap-1.6.0/package/dist/jsvectormap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #007BFF;
+            /* Border around the map */
+            border-radius: 10px;
+            /* Rounded corners */
+            background-color: rgb(242 245 245) !important;
+        }
+
+        body {
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+        }
+
+        .rs-testimonial.style2 .testi-wrap {
+            overflow: hidden;
+            background: #f3f8f9;
+            border-radius: 14px;
+            padding: 30px;
+            border: 3px solid #c9c3c3;
+        }
+
+        .rs-popular-courses.orange-color.style3 .courses-item .content-part .bottom-part .btn-part a {
+            background-color: #E3372B;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 35px;
+            font-weight: 600;
+        }
+
+        .rs-popular-courses.style3 .courses-item {
+            background-color: #fff;
+            border-radius: 19px;
+        }
+
+        .rs-popular-courses.orange-color.style3 .courses-item .content-part .bottom-part .btn-part a:hover {
+            color: #fff;
+            padding: 8px;
+            border-radius: 35px;
+            background: linear-gradient(90deg, transparent 50%, #205A99 50%);
+            transition: background-position 0.2s ease;
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            border: 1px solid #205A99;
+        }
+
+        @media only screen and (min-width: 1440px) {
+            div#rs-popular-courses .container {
+                max-width: 1473px;
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollLeft {
+            to {
+                left: -150px;
+            }
+        }
+
+        @keyframes scrollRight {
+            to {
+                right: -150px;
+            }
+        }
+
+        .float-container {
+            position: fixed;
+            top: 33%;
+            right: 35px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+        }
+
+        .float-container a {
+            z-index: 99;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 200px;
+            height: 30px;
+            margin-right: -190px;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            color: white;
+            border-color: #46b8da;
+            border-radius: 5px 0 0 5px;
+            background-color: #eb0b0b;
+            -webkit-box-shadow: 0 2px 4px #7d7d7d;
+            box-shadow: 0 2px 4px #7d7d7d;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            font-family: sans-serif;
+        }
+
+        .float-container a:hover {
+            margin-right: 0;
+            background-color: #005cc4;
+            -webkit-box-shadow: 0 2px 4px #7d7d7d;
+            box-shadow: 0 2px 4px #7d7d7d;
+        }
+
+        .float-container .icon:before {
+            font-family: "Font Awesome 5 Free";
+            margin-right: 20px;
+            -webkit-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .icon.one:before {
+            content: "\f073";
+        }
+
+        .icon.two:before {
+            content: "\f086";
+        }
+
+        .icon.three:before {
+            content: "\f1d8";
+        }
+
+        /* slider logo */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        .slider-wrapper {
+            width: 90%;
+            max-width: 1536px;
+            margin-inline: auto;
+            position: relative;
+            height: 100px;
+            margin-top: 5rem;
+            overflow: hidden;
+            mask-image: linear-gradient(to right,
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 1) 20%,
+                    rgba(0, 0, 0, 1) 80%,
+                    rgba(0, 0, 0, 0));
+        }
+
+        .item {
+            width: 100px;
+            height: 80px;
+            border-radius: 6px;
+            position: absolute;
+        }
+
+        .left .item {
+            left: max(calc(200px * 8), 100%);
+            animation: scrollLeft 10s linear infinite;
+        }
+
+        .right .item {
+            right: max(calc(200px * 8), 100%);
+            animation: scrollRight 10s linear infinite;
+        }
+
+        .left .item1,
+        .right .item1 {
+            animation-delay: calc((-10s / 8) * 7);
+        }
+
+        .left .item2,
+        .right .item2 {
+            animation-delay: calc((-10s / 8) * 6);
+        }
+
+        .left .item3,
+        .right .item3 {
+            animation-delay: calc((-10s / 8) * 5);
+        }
+
+        .left .item4,
+        .right .item4 {
+            animation-delay: calc((-10s / 8) * 4);
+        }
+
+        .left .item5,
+        .right .item5 {
+            animation-delay: calc((-10s / 8) * 3);
+        }
+
+        .left .item6,
+        .right .item6 {
+            animation-delay: calc((-10s / 8) * 2);
+        }
+
+        .left .item7,
+        .right .item7 {
+            animation-delay: calc((-10s / 8) * 1);
+        }
+
+        .left .item8,
+        .right .item8 {
+            animation-delay: calc((-10s / 8) * 0);
+        }
+
+        .full-width-video {
+            width: 100%;
+            /* Makes the video take up 100% of the container's width */
+            height: auto;
+            /* Maintains the aspect ratio */
+            display: block;
+            /* Ensures no extra space at the bottom (removes inline element behavior) */
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .mission {
+            background-color: #0073e6;
+        }
+
+        .vision {
+            background-color: #00b3b3;
+        }
+
+        .circle h2 {
+            margin: 0;
+            font-size: 18px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .circle p {
+            font-size: 14px;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .circle:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .footer-icon {
+            background-color: #fff;
+            padding: 8px 9.5px;
+            border-radius: 100%;
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-icon:hover {
+            padding: 5px;
+            border-radius: 25%;
+        }
+
+        .title-font {
+            font-family: "Playfair Display", serif;
+            font-size: 5vh;
+            /* font-style: oblique; */
+            font-weight: 900;
+        }
+
+        .subtitle-font {
+            font-family: "Lora", serif;
+        }
+
+        .text-font {
+            font-family: "Montserrat", serif;
+            color: black;
+            font-weight: 500;
+        }
+
+        .contact-btn {
+            background: #f3f8f9;
+            color: #111111;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            border: 1px solid gray;
+            border-radius: 30px;
+            padding: 12px 40px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 16px;
+        }
+
+        .contact-btn:hover {
+            background: linear-gradient(90deg, transparent 50%, orangered 50%);
+            transition: background-position 0.4s ease;
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            border: 1px solid orangered;
+            color: white;
+        }
+
+        .title-btn {
+            background: red;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 8px 15px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+        }
+
+        .title-btn:hover {
+            background: linear-gradient(60deg, red 50%, #0d3968 50%);
+            transition: background-position 0.5s ease;
+            background-size: 300%;
+            background-position: 100% 0;
+            color: #fff;
+        }
+
+        .latest-update-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .contact-us-slider-btn {
+            color: #fff;
+            background: #ff3d3d;
+            border-radius: 5px;
+            outline: none;
+            padding: 12px 35px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: "Montserrat", serif;
+            margin-top: 65px;
+        }
+
+        .contact-us-slider-btn:hover {
+            background: linear-gradient(90deg, #ff3d3d 50%, #001933 50%);
+            transition: background-position 0.4s ease;
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            color: #fff;
+        }
+
+        .slider-sub-title {
+            font-size: 35px;
+            line-height: 30px;
+            font-weight: 950;
+            color: #ff3d3d;
+            
+            text-transform: uppercase;
+            font-family: "Lora", serif;
+        }
+
+        .slider-title {
+            font-size: 70px;
+            line-height: 80px;
+            font-weight: 900;
+            color: #fff;
+            margin-top: 22px;
+            font-family: "Playfair Display", serif;
+        }
+
+        /* Media queries */
+        @media screen and (max-width:440px) {
+            .float-container .icon:last-child {
+                display: none;
+            }
+
+            .float-container {
+                position: fixed;
+                top: auto;
+                bottom: 0;
+
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: row;
+                flex-direction: row;
+
+                width: 100%;
+
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: auto;
+                -webkit-box-align: auto;
+                -ms-flex-align: auto;
+                align-items: auto;
+            }
+
+            .float-container a.icon {
+                right: 0;
+                bottom: 0;
+
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 0;
+                padding: 5px;
+
+                border-radius: 0;
+                -webkit-box-shadow: 0 0 0 #7d7d7d;
+                box-shadow: 0 0 0 #7d7d7d;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                border-left: 1px solid darkorange;
+                border-right: 1px solid darkorange;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-------------------------------Preloader-------------------------->
+    <div id="loader" class="loader orange-color">
+        <div class="loader-container">
+            <div class='loader-icon'>
+                <img src="assets/images/logo.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content Start -->
+    <!--Full width header Start-->
+    <div class="full-width-header home8-style4 main-home">
+        <!--Header Start-->
+        <header id="rs-header" class="rs-header">
+            <!-- Menu Start -->
+            <div class="menu-area menu-sticky">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-lg-2">
+                            <div class="logo-cat-wrap">
+                                <div class="logo-part">
+                                    <a href="index.html">
+                                        <img class="normal-logo" src="assets/images/logo.png" alt="">
+                                        <img class="sticky-logo" src="assets/images/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 text-right">
+                            <div class="rs-menu-area">
+                                <div class="main-menu">
+                                    <div class="mobile-menu">
+                                        <a class="rs-menu-toggle">
+                                            <i class="fa fa-bars"></i>
+                                        </a>
+                                    </div>
+                                    <nav class="rs-menu">
+                                        <ul class="nav-menu">
+                                            <li class="rs-mega-menu mega-rs menu-item-has-children current-menu-item">
+                                                <a href="index.html">Home</a>
+
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <a href="#">About</a>
+
+                                            </li>
+
+                                            <li class="menu-item-has-children">
+                                                <a href="#">Products</a>
+
+                                            </li>
+
+                                            <li class="menu-item-has-children">
+                                                <a href="#">Turnkey Solutions</a>
+
+                                            </li>
+
+                                            <li class="menu-item-has-children">
+                                                <a href="#"> Gallery</a>
+
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-2 ">
+                            <div class="expand-btn-inner">
+                                <ul>
+                                    <div class="btn-part text-right sm-text-left">
+                                        <a href="#" class="contact-btn">Contact </a>
+                                    </div>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canvas Menu start -->
+            <nav class="right_menu_togle hidden-md">
+                <div class="close-btn">
+                    <div id="nav-close">
+                        <div class="line">
+                            <span class="line1"></span><span class="line2"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-logo">
+                    <a href="index.html"><img src="assets/images/dark-logo.png" alt="logo"></a>
+                </div>
+                <div class="offcanvas-text">
+                    <p>We denounce with righteous indige nationality and dislike men who are so beguiled and demo by
+                        the charms of pleasure of the moment data com so blinded by desire.</p>
+                </div>
+                <div class="offcanvas-gallery">
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/1.jpg"><img src="assets/images/gallery/1.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/2.jpg"><img src="assets/images/gallery/2.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/3.jpg"><img src="assets/images/gallery/3.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/4.jpg"><img src="assets/images/gallery/4.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/5.jpg"><img src="assets/images/gallery/5.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/6.jpg"><img src="assets/images/gallery/6.jpg"
+                                alt=""></a>
+                    </div>
+                </div>
+                <div class="map-img">
+                    <img src="assets/images/map.jpg" alt="">
+                </div>
+                <div class="canvas-contact">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Canvas Menu end -->
+        </header>
+        <!--Header End-->
+    </div>
+
+    <!---------------------------------- Slider  ----------------------------------------->
+    <section>
+        <div class="rs-slider main-home">
+            <div class="rs-carousel owl-carousel" data-loop="true" data-items="1" data-margin="0" data-autoplay="true"
+                data-hoverpause="true" data-autoplay-timeout="4000" data-smart-speed="800" data-dots="false"
+                data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1"
+                data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="1"
+                data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1"
+                data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="1"
+                data-md-device-nav="true" data-md-device-dots="false">
+                <div class="slider-content slide" style="width: 100%; margin: 0; padding: 0;">
+                    <div class="container" style="width: 100%; max-width: 100%; margin: 0; padding: 0;height: 99vh;">
+                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="assets/images/b.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="slider-content slide1">
+                    <div class="container">
+                        <div class="content-part">
+                            <div class="slider-sub-title wow bounceInLeft" data-wow-delay="300ms"
+                                data-wow-duration="2000ms">Welcome To Topse</div>
+                            <h1 class="slider-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">
+                                Fine And Specialty Chemical</h1>
+                            <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
+                                <a class="contact-us-slider-btn" href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-content slide2">
+                    <div class="container">
+                        <div class="content-part">
+                            <div class="slider-sub-title wow bounceInLeft" data-wow-delay="300ms"
+                                data-wow-duration="2000ms">Welcome To Topse</div>
+                            <h1 class="slider-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">
+                                Fine And Specialty Chemical</h1>
+                            <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
+                                <a class="contact-us-slider-btn" href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-content slide3">
+                    <div class="container">
+                        <div class="content-part">
+                            <div class="slider-sub-title wow bounceInLeft" data-wow-delay="300ms"
+                                data-wow-duration="2000ms">Welcome To Topse</div>
+                            <h1 class="slider-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">
+                                Fine And Specialty Chemical</h1>
+                            <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
+                                <a class="contact-us-slider-btn" href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-content slide4">
+                    <div class="container">
+                        <div class="content-part">
+                            <div class="slider-sub-title wow bounceInLeft" data-wow-delay="300ms"
+                                data-wow-duration="2000ms">Welcome To Topse</div>
+                            <h1 class="slider-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">
+                                Fine And Specialty Chemical</h1>
+                            <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
+                                <a class="contact-us-slider-btn" href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-content slide5">
+                    <div class="container">
+                        <div class="content-part">
+                            <div class="slider-sub-title wow bounceInLeft" data-wow-delay="300ms"
+                                data-wow-duration="2000ms">Welcome To Topse</div>
+                            <h1 class="slider-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">
+                                Fine And Specialty Chemical</h1>
+                            <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
+                                <a class="contact-us-slider-btn" href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------- INDUSTRIES WE SERVE ---------------------------->
+    <section>
+        <div id="rs-popular-courses" class="rs-popular-courses main-home event-bg pt-50 md-pt-70 md-pb-70">
+            <div class="container">
+                <div class="sec-title4 text-center mb-20">
+                    <div class="sub-title"></div>
+                    <h2 class="title purple-color wow slideInDown title-font" data-wow-delay="300ms"
+                        data-wow-duration="3000ms">
+                        INDUSTRIES WE SERVE </h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="3000ms">
+                        <div class="courses-item">
+                            <div class="courses-grid">
+                                <div class="img-part text-center">
+                                    <a href="#"><img src="assets/images/1.svg" alt=""></a>
+                                </div>
+                                <div class="content-part text-center">
+                                    <h3><a href="#" class="title-btn">API Bulk Drug</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="3000ms">
+                        <div class="courses-item" style="text-align:center;">
+                            <div class="courses-grid">
+                                <div class="img-part">
+                                    <a href="#"><img src="assets/images/2.svg" alt=""></a>
+                                </div>
+                                <div class="content-part text-center">
+                                    <h3><a href="#" class="title-btn">Biotech </a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="3000ms">
+                        <div class="courses-item" style="text-align: center;">
+                            <div class="courses-grid">
+                                <div class="img-part">
+                                    <a href="#"><img src="assets/images/3.svg" alt=""></a>
+                                </div>
+                                <div class="content-part text-center">
+                                    <h3><a href="#" class="title-btn">Formulation</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="3000ms">
+                        <div class="courses-item" style="text-align: center;">
+                            <div class="courses-grid">
+                                <div class="img-part">
+                                    <a href="#"><img src="assets/images/4.svg" alt=""></a>
+                                </div>
+                                <div class="content-part text-center">
+                                    <h3><a href="#" class="title-btn">Chemical</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------------------- LATEST UPDATES ------------------------------>
+    <section>
+        <div id="rs-popular-courses" class="rs-popular-courses style3 orange-color pt-50 pb-50 md-pt-70 md-pb-70"
+            style="background-color: #205A99;">
+            <div class="container">
+                <div class="sec-title4 text-center mb-30">
+                    <div class="sub-title"></div>
+                    <h2 class="title purple-color wow slideInDown title-font" data-wow-delay="300ms"
+                        data-wow-duration="3000ms" style="color: #fff;"> LATEST UPDATES</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInDown" data-wow-delay="300ms" data-wow-duration="3000ms">
+                            <div class="img-part">
+                                <img src="assets/images/l1.png" alt="">
+                            </div>
+                            <div class="content-part">
+                                <h3 class="title subtitle-font"><a href="course-single.html">2023 Excellence award to
+                                        Topse by DRDO
+                                    </a></h3>
+                                <div class="all-dates-time mb-4">
+                                    <div class="address text-font latest-update-text">The 2023 Excellence Award was
+                                        conferred to Topse by
+                                        DRDO for outstanding contributions to defense research and development.<br>
+                                    </div>
+                                </div>
+                                <div class="bottom-part" style="border-top: 1px solid #efefef;">
+                                    <div class="info-meta">
+                                        <img src="assets/images/c1.png" style="height: 62px;">
+                                    </div>
+                                    <div class="btn-part mt-4">
+                                        <a href="#">Read More<i class="flaticon-right-arrow"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInDown" data-wow-delay="300ms" data-wow-duration="3000ms">
+                            <div class="img-part">
+                                <img src="assets/images/l2.png" alt="">
+                            </div>
+                            <div class="content-part">
+                                <!-- <span><a class="categories" href="#">Photography</a></span> -->
+                                <h3 class="title subtitle-font"><a href="course-single.html">Pharmalytica 2024 Hyderabad
+                                    </a></h3>
+                                <div class="all-dates-time mb-4">
+                                    <div class="address text-font latest-update-text">What a fantastic experience in
+                                        Pharmalytica 2024,
+                                        Hyderabad It was an excellent platform to showcase our latest innovations and
+                                        connect with industry leaders, experts, and potential partners.
+                                    </div>
+                                </div>
+                                <div class="bottom-part" style="border-top: 1px solid #efefef;">
+                                    <div class="info-meta">
+                                        <img src="assets/images/c.png" style="padding-top: 19px; height: 58px;">
+                                    </div>
+                                    <div class="btn-part mt-4">
+                                        <a href="#">Read More<i class="flaticon-right-arrow"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInDown" data-wow-delay="300ms" data-wow-duration="3000ms">
+                            <div class=" img-part">
+                                <img src="assets/images/l3.png" alt="">
+                            </div>
+                            <div class="content-part">
+                                <!-- <span><a class="categories" href="#">Photography</a></span> -->
+                                <h3 class="title subtitle-font"><a href="course-single.html">Dahej Industrial Expo
+                                        2024</a></h3>
+                                <div class="all-dates-time mb-4">
+                                    <div class="address text-font latest-update-text">Successful participation in Dahej
+                                        Industrial Expo
+                                        Dahej is a major Industrial hub known for it's growing infrastructure and
+                                        Industrial
+                                    </div>
+                                </div>
+                                <div class="bottom-part" style="border-top: 1px solid #efefef;">
+                                    <div class="info-meta">
+                                        <img src="assets/images/c3.png" style="height: 60px;">
+                                    </div>
+                                    <div class="btn-part mt-4">
+                                        <a href="#">Read More<i class="flaticon-right-arrow"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 md-mb-30">
+                        <div class="courses-item wow slideInDown" data-wow-delay="300ms" data-wow-duration="3000ms">
+                            <div class=" img-part">
+                                <img src="assets/images/l.png" alt="">
+                            </div>
+                            <div class="content-part">
+                                <!-- <span><a class="categories" href="#">Photography</a></span> -->
+                                <h3 class="title subtitle-font"><a href="course-single.html">CPHI- PMEC Delhi <br><br>
+                                    </a></h3>
+                                <div class="all-dates-time mb-4">
+                                    <div class="address text-font latest-update-text">Incredible experience in CPHI-
+                                        PMEC India 2024 We participated in CPHI PMEC Worldwide Exhibition is one of the
+                                        most prestigious
+                                        global trade events for the pharmaceutical industry.
+                                    </div>
+                                </div>
+                                <div class="bottom-part" style="border-top: 1px solid #efefef;">
+                                    <div class="info-meta">
+                                        <img src="assets/images/c2.png" style="height: 62px;">
+                                    </div>
+                                    <div class="btn-part mt-4">
+                                        <a href="#">Read More<i class="flaticon-right-arrow"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------------  WELCOME TO TOPSE -------------------------->
+    <section>
+        <div class="rs-testimonial style2 pt-70 pb-70 md-pt-70 md-pb-70">
+            <div class="container">
+
+                <div class="sec-title mb-60 md-mb-30 text-center">
+                    <h2 class="title mb-10 title-font">
+                        WELCOME TO TOPSE</h2>
+                    <!-- <div class="desc mb-38" style="font-size: 22px; font-family: 'Sofia', Sans-serif;">Topse, with a
+                        team of 120 engineers and
+                        advanced software like SolidWorks and Solid
+                        Plant-3offers turnkey solutions including design, engineering, installation,and
+                        training.
+                        We specialize in manufacturing mechanical
+                        equipment such as reactors, vessels, tanks,
+                        distillation columns, and more.</div> -->
+                    <div class="desc mb-38" style="font-size: 22px;font-family: 'Sofia', Sans-serif;">
+                        Topse team consists of highly skilled professionals with 120 Engineers & is Equipped with
+                        Engineering software's such as Aspen Plus, Solid Works and Solid Plant-3D to etc. We
+                        emphasize
+                        on Turnkey Project for Biologics, API , Chemical . Our core strength is the separation using
+                        distillation , pervaporation technology for solvent dehydration. Our project delivery
+                        includes
+                        Design, Engineering, Supply, Installation and Commissioning as well as Training and Skill
+                        Development. In house facility for Design, Engineering and Manufacturing of all types of
+                        Mechanical Equipments such as Stainless Steel Reactors, Process Vessels, Fermenters,
+                        Bioreactors, Storage Tanks, Distillation Columns, Condensers, Reboilers, Evaporators,
+                        Solvent
+                        Recovery Units, Heating and Cooling System and Hydrogenators.
+                    </div>
+                </div>
+                <div class="row">
+                    <!--<div class="col-lg-2 col-md-6 col-sm-6 mb-40"></div>-->
+                    <div class="col-lg-12 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInDown" data-wow-delay="300ms" data-wow-duration="3000ms">
+                            <div class="testi-wrap mb-50 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="5000ms"
+                                style="visibility: visible; animation-duration: 2000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+                                <div class="">
+                                    <video class="full-width-video" autoplay muted loop playsinline>
+                                        <source src="assets/images/1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------ TURNKEY SOLUTION THROUGH SCIENCE, ENGINERING & TECHNOLOGY -------------------->
+    <section>
+        <div id="rs-popular-courses" class="rs-popular-courses main-home event-bg pt-30 pb-2 md-pt-30 md-pb-30"
+            style="background-image: linear-gradient(#f5f7f7, #feffff)">
+            <div class="container">
+                <div class="sec-title4 text-center">
+                    <div class="sub-title"></div>
+                    <h2 class="title purple-color mb-60 mt-30 title-font"> TURNKEY SOLUTION THROUGH SCIENCE,
+                        ENGINERING &
+                        TECHNOLOGY</h2>
+                </div>
+                <div class="row mt-4 mb-60">
+                    <div class="col-lg-1 col-md-6 col-sm-6 mb-40"></div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInLeft" data-wow-delay="300ms" data-wow-duration="3000ms">
+                            <div class="img-part">
+                                <img src="assets/images/Frame/Frame1.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInLeft" data-wow-delay="300ms" data-wow-duration="4500ms">
+                            <div class="img-part">
+                                <img src="assets/images/Frame/Frame2.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInLeft" data-wow-delay="300ms" data-wow-duration="6500ms">
+                            <div class=" img-part">
+                                <img src="assets/images/Frame/Frame3.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 mb-40">
+                        <div class="courses-item wow slideInLeft" data-wow-delay="300ms" data-wow-duration="7300ms">
+                            <div class=" img-part">
+                                <img src="assets/images/Frame/Frame4.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 md-mb-30">
+                        <div class="courses-item wow slideInLeft" data-wow-delay="300ms" data-wow-duration="4500ms">
+                            <div class=" img-part">
+                                <img src="assets/images/Frame/Frame5.svg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------------------- TESTIMONIALS ------------------------------>
+    <section>
+        <div id="rs-team" class="rs-team style1 gray-bg pt-44 pb-100 md-pt-64 md-pb-70">
+            <div class="container">
+                <div class="sec-title mb-50 md-mb-30">
+                    <h2 class="title text-center mb-0 wow slideInDown title-font" data-wow-delay="300ms"
+                        data-wow-duration="3000ms">
+                        TESTIMONIALS</h2>
+                </div>
+                <div class="rs-carousel owl-carousel nav-style2" data-loop="true" data-items="3" data-margin="30"
+                    data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="3000" data-smart-speed="800"
+                    data-dots="false" data-nav="true" data-nav-speed="false" data-center-mode="false"
+                    data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false"
+                    data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false"
+                    data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="false"
+                    data-md-device="3" data-md-device-nav="true" data-md-device-dots="false">
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t1.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t2.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t3.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t4.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t1.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t2.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t3.png" alt="">
+                    </div>
+                    <div class="team-item wow fadeInDown" data-wow-delay="300ms" data-wow-duration="2000ms">
+                        <img src="assets/images/t4.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------------------- Company Statistics ---------------------------->
+    <section>
+        <div class="rs-cta main-home">
+            <div class="partition-bg-wrap">
+                <div class="row">
+                    <div class="col-lg-8" style="background-color: rgb(242 245 245);">
+                        <div id="map" class="rs-counter style2-about"
+                            style="border: none;box-shadow: none; background-color: rgb(242 245 245);"></div>
+                    </div>
+                    <div class="col-lg-4     pl-70 md-pl-15">
+                        <div class="rs-counter style2-about">
+                            <div class="sec-title3  mb-40">
+                                <h2 class="title white-color mb-16" style="padding-top: 90px; text-align: center;">
+                                    Company Statistics</h2>
+                                <div class="desc white-color pr-100 md-pr-0"
+                                    style="text-align: center; font-family: 'Sofia', Sans-serif;">Our journey has
+                                    been
+                                    filled with incredible collaborations and projects. Here's a glimpse through the
+                                    numbers.</div>
+                            </div>
+                            <div class=" btn-part">
+                                <!-- <a class="readon orange-btn transparent" href="#">Register Now</a> -->
+                                <div class="row couter-area">
+                                    <div class="col-lg-6 col-md-6 md-mb-30 wow slideInDown" data-wow-delay="300ms"
+                                        data-wow-duration="3000ms" style="border-right: 1px solid white;">
+                                        <div class="counter-item text-center">
+                                            <h2 class="rs-count plus" style="color: #ffff;">50 <i
+                                                    class="fa-solid fa-plus" style="color: #ffff;"></i></h2>
+                                            <h4 class="title mb-0" style="color: #ffff;">Turnkey Projects</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 md-mb-30 wow slideInDown" data-wow-delay="300ms"
+                                        data-wow-duration="3000ms">
+                                        <div class="counter-item text-center">
+                                            <h2 class="rs-count plus white-color">40</h2>
+                                            <h4 class="title mb-0" style="color: #ffff;">Products & Services</h4>
+                                        </div>
+                                    </div>
+
+                                    <p class="mt-5"
+                                        style="color: #f5f7f7; text-align: center; font-family: 'Sofia', Sans-serif;">
+                                        "We’re proud to work with a diverse range of businesses across various
+                                        industries,
+                                        <br>
+                                        from startups to established global brands.
+                                        <br>
+                                        Our clients trust us to deliver top-notch services that meet their needs and
+                                        goals."
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------- OUR SERVICES TRUSTED BY ------------------------->
+    <section>
+        <div id="rs-popular-courses" class="rs-popular-courses main-home event-bg pt-30 pb-2 md-pt-30 md-pb-30">
+            <div class="container">
+                <div class="sec-title4 text-center">
+                    <div class="sub-title"></div>
+                    <h2 class="title purple-color title-font"> OUR SERVICES TRUSTED BY</h2>
+                </div>
+            </div>
+        </div>
+        <div class="slider-wrapper left">
+            <div class="item item1"> <a href="#"><img src="assets/images/b1.png" alt=""></a></div>
+            <div class="item item2"> <a href="#"><img src="assets/images/b2.png" alt=""></a></div>
+            <div class="item item3"> <a href="#"><img src="assets/images/b3.png" alt=""></a></div>
+            <div class="item item4"> <a href="#"><img src="assets/images/b4.png" alt=""></a></div>
+            <div class="item item5"> <a href="#"><img src="assets/images/b5.png" alt=""></a></div>
+            <div class="item item6"> <a href="#"><img src="assets/images/b6.png" alt=""></a></div>
+            <div class="item item7"> <a href="#"><img src="assets/images/b7.png" alt=""></a></div>
+            <div class="item item8"> <a href="#"><img src="assets/images/b8.png" alt=""></a></div>
+            <div class="item item8"> <a href="#"><img src="assets/images/b9.png" alt=""></a></div>
+            <div class="item item8"> <a href="#"><img src="assets/images/b10.png" alt=""></a></div>
+            <div class="item item8"> <a href="#"><img src="assets/images/b11.png" alt=""></a></div>
+            <!-- <div class="item item8"> <a href="#"><img src="assets/images/b12.png" alt=""></a></div>
+            <div class="item item1"> <a href="#"><img src="assets/images/b13.png" alt=""></a></div> -->
+
+
+        </div>
+        <div class="slider-wrapper right">
+            <div class="item item1"><a href="#"><img src="assets/images/b12.png" alt=""></a></div>
+            <div class="item item2"><a href="#"><img src="assets/images/b11.png" alt=""></a></div>
+            <div class="item item3"><a href="#"><img src="assets/images/b13.png" alt=""></a></div>
+            <div class="item item4"><a href="#"><img src="assets/images/b10.png" alt=""></a></div>
+            <div class="item item5"><a href="#"><img src="assets/images/b9.png" alt=""></a></div>
+            <div class="item item6"><a href="#"><img src="assets/images/b7.png" alt=""></a></div>
+            <div class="item item7"><a href="#"><img src="assets/images/b8.png" alt=""></a></div>
+            <div class="item item8"><a href="#"><img src="assets/images/b6.png" alt=""></a></div>
+            <div class="item item1"> <a href="#"><img src="assets/images/b1.png" alt=""></a></div>
+            <div class="item item2"> <a href="#"><img src="assets/images/b2.png" alt=""></a></div>
+            <div class="item item3"> <a href="#"><img src="assets/images/b3.png" alt=""></a></div>
+            <div class="item item4"> <a href="#"><img src="assets/images/b4.png" alt=""></a></div>
+            <div class="item item5"> <a href="#"><img src="assets/images/b5.png" alt=""></a></div>
+        </div>
+    </section>
+
+    <!------------------------------------- Footer ------------------------------------->
+    <footer id="rs-footer" class="rs-footer home9-style main-home" style="background-image: url(assets/images/newfooter.svg);background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center; padding-top: -20px;">
+        <div class="footer-top">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between gap-5 w-100">
+                    <!-- <div class="col-lg-4 col-md-12 col-sm-12 footer-widget  wow slideInDown"
+                                data-wow-delay="300ms" data-wow-duration="3000ms">
+                                <div class="footer-logo mb-30">
+                                    <h3 class="widget-title">Mission & Vision</h3>
+                                </div>
+                                <div class="textwidget pr-60 md-pr-15 d-flex">
+                                        <div class="circle mission">
+                                            <div>
+                                                <h2>
+                                                    MISSION
+                                                </h2>
+                                                <p>
+                                                    Deliver value with turnkey solutions in API, Biotech, Specialty
+                                                    Chemicals, and Pharmaceuticals.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="circle vision">
+                                            <div>
+                                                <h2>
+                                                    VISION
+                                                </h2>
+                                                <p>
+                                                    To be the leading engineering company known for our methodologies
+                                                    and capabilities.
+                                                </p>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div> -->
+                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget wow slideInDown" data-wow-delay="300ms"
+                        data-wow-duration="3000ms">
+                        <h3 class="widget-title mb-3">VISION</h3>
+                        <span class="text-white">To be the most efficient and leading Engineering Company renowned
+                            for our working Methodologies, Technological and human resource capabilities.</span>
+                        <h3 class="widget-title mt-4 mb-3">MISSION</h3>
+                        <span class="text-white">Our mission is to be deliver value to our customers and
+                            stakeholders by providing complete turkey solutions in API, Biotech, Speciality
+                            Chemicals and Pharmaceutical industries</span>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget wow slideInDown" data-wow-delay="300ms"
+                        data-wow-duration="3000ms">
+                        <h3 class="widget-title">GET IN TOUCH</h3>
+                        <ul class="address-widget">
+                            <li>
+                                <i class="flaticon-location"></i>
+                                <div class="desc">M/s. TOPSE Process Solutions Pvt. Pune </div>
+                            </li>
+                            <li>
+                                <i class="flaticon-call"></i>
+                                <div class="desc">
+                                    <a href="tel:(+880)155-69569">+91 89569 63594</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="flaticon-email"></i>
+                                <div class="desc">
+                                    <a href="mailto:support@rstheme.com">Marketing@topse.in</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="footer_social mt-30 wow slideInDown" data-wow-delay="300ms"
+                            data-wow-duration="3000ms">
+                            <li>
+                                <a href="https://www.linkedin.com/company/topse-process-solutions-pvt-ltd"
+                                    target="_blank" class="footer-icon">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue"
+                                            class="bi bi-linkedin" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/topse_process_solutions?igsh=MWNtcjJibGFleTE2cQ=="
+                                    target="_blank" class="footer-icon">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black"
+                                            class="bi bi-instagram" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="footer-icon">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red"
+                                            class="bi bi-youtube" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget wow slideInDown" data-wow-delay="300ms"
+                        data-wow-duration="3000ms">
+                        <h3 class="widget-title">Address</h3>
+                        <div class="recent-post mb-20">
+                            <div class="post-item">
+                                <div class="post-desc">
+                                    <a href="https://maps.app.goo.gl/o1pvcexU8zSTxrMs6"> M/s. TOPSE Process
+                                        Solutions Pvt. Ltd. Plot No.48A, Ground Floor, Hill Top Society,
+                                        Taljai pathar, Dhankawadi, Pune 411043
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-post mb-20 md-pb-0">
+                            <div class="post-img">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.339438671893!2d73.84437837607884!3d18.468277682615152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eab3cebb5ba5%3A0xee919d4adb120644!2sTOPSE%20Process%20Solutions%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1735556345137!5m2!1sen!2sin"
+                                    width="250" height="150" style="border:0;border-radius: 7px;" allowfullscreen=""
+                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 footer-widget wow slideInDown" data-wow-delay="300ms"
+                        data-wow-duration="3000ms">
+                        <h3 class="widget-title">Factory Address</h3>
+                        <div class="recent-post mb-20">
+                            <div class="post-item">
+                                <div class="post-desc">
+                                    <a href="https://maps.app.goo.gl/o1pvcexU8zSTxrMs6"> Near Junanjai Park,
+                                        kasurdi<br> ( khe- ba) Tal - Bhor Dist - <br>Pune 412205</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-post mb-20 md-pb-0">
+                            <div class="post-img">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3786.911936523177!2d73.86656147607663!3d18.351301582709677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ede48b5f335b%3A0x5f64a74dd0e9a453!2sJunanjai%20Park!5e0!3m2!1sen!2sin!4v1735556756923!5m2!1sen!2sin"
+                                    width="250" height="150" style="border:0; border-radius: 7px;" allowfullscreen=""
+                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!----------------------- side menu - 3 menus at right side --------------------->
+    <div class="float-container">
+        <a href="#" class="icon one">Book now</a>
+        <a href="#" class="icon two">Get in touch</a>
+        <a href="#" class="icon three">Send message</a>
+    </div>
+
+    <!-- 2 Footer -->
+    <!--<footer id="rs-footer" class="rs-footer home9-style main-home" style="background-image:url(assets/images/wave.svg); background-size: cover;
+background-repeat: no-repeat;
+background-position: center; padding-top: -20px;">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+         <div class="footer-bottom">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-lg-2 md-mb-20">
+                            <div class="copyright">
+                                -- <div class="footer-logo mb-30">
+                                    <h3 class="widget-title" style="color: #fff;padding-left: 20px;">Follow Us</h3>
+                                </div>
+                                <ul class="copy-right-menu wow slideInDown" data-wow-delay="300ms"
+                                    data-wow-duration="3000ms">
+                                    <li><span><i class="fa fa-instagram"
+                                                style="background-color: #fff;padding: 10px;border-radius: 50%;color: #000;"></i></span>
+                                    </li>
+                                    <li><span><i class="fa fa-facebook"
+                                                style="background-color: #fff;padding: 10px;border-radius: 50%;color: #000;"></i></span>
+                                    </li>
+                                    <li><span><i class="fa fa-twitter"
+                                                style="background-color: #fff;padding: 10px;border-radius: 50%;color: #000;"></i></span>
+                                    </li>
+                                </ul> --
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="footer-logo mb-30">
+                                <h3 class="widget-title" style="color: #fff;padding-left: 20px;"></h3>
+
+                            </div>
+                            <ul class="copy-right-menu wow slideInDown" data-wow-delay="300ms"
+                                data-wow-duration="6000ms" style="font-size: 26px;">
+                                <li><a href="#"><i class="fa fa-phone"></i> +123-456789</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="footer-logo mb-30">
+                                <h3 class="widget-title" style="color: #fff;padding-left: 20px;"></h3>
+
+                            </div>
+                            <ul class="copy-right-menu wow slideInDown" data-wow-delay="300ms"
+                                data-wow-duration="6000ms" style="font-size: 26px;">
+                                <li><a href="#"><i class="fa fa-envelope"></i> Marketing@topse.in</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="footer-logo mb-30">
+                                <h3 class="widget-title" style="color: #fff;padding-left: 20px;"></h3>
+
+                            </div>
+                            <ul class="copy-right-menu wow slideInDown" data-wow-delay="300ms"
+                                data-wow-duration="6000ms" style="font-size: 26px; ">
+                                <li>
+                                    <a class="btn" href="#"
+                                        style="background: linear-gradient(to right, #6b0cb1, #1539bd);"><i
+                                            class='fas fa-map-marker-alt'></i> Get In Touch</a>
+                        </div>
+                        </li>
+                        <
+                </div>
+            </div> 
+    </div>
+    </footer>-->
+
+
+    <script src="./assets/jsvectormap-1.6.0/package/dist/jsvectormap.min.js"></script>
+    <!-- Update with the correct path -->
+    <script src="./assets/jsvectormap-1.6.0/package/dist/maps/world.js"></script>
+    <!-- Update with the correct path -->
+    <script src="./assets/jsvectormap-1.6.0/package/dist/maps/world-merc.js"></script>
+    <script>
+        var map = new jsVectorMap({
+            map: 'world',
+            selector: '#map',
+            backgroundColor: '#e0f7fa', // Light blue background for the map
+            markers: [
+                { name: 'Thailand', coords: [13.75, 100.5], label: 'Bangkok' },
+                { name: 'Japan', coords: [36.5, 138.5], label: 'Tokyo' },
+                { name: 'Malaysia', coords: [4.5, 101.5], label: 'Kuala Lumpur' },
+                { name: 'Philippines', coords: [12.5, 122.5], label: 'Manila' },
+                { name: 'Sri Lanka', coords: [7.0, 81.5], label: 'Colombo' },
+                { name: 'Nigeria', coords: [9.08, 8.68], label: 'Lagos' },
+                { name: 'Riyadh', coords: [24.7, 46.7], label: 'Riyadh' },
+                { name: 'Dubai', coords: [25.276987, 55.296249], label: 'Dubai' },
+                { name: 'Germany', coords: [51.1657, 10.4515], label: 'Berlin' },
+                { name: 'Switzerland', coords: [46.8182, 8.2275], label: 'Bern' },
+                { name: 'USA', coords: [37.0902, -95.7129], label: 'Washington D.C.' },
+                { name: 'Africa', coords: [1.2921, 36.8219], label: 'Nairobi' }
+            ],
+            markerStyle: {
+                initial: {
+                    fill: '#007BFF', // Marker color
+                    stroke: '#ffffff', // Marker border color
+                    r: 8 // Marker radius
+                },
+                hover: {
+                    fill: '#FF5722', // Marker color on hover
+                    stroke: '#ffffff', // Marker border color on hover
+                    r: 10 // Marker radius on hover
+                }
+            },
+            onMarkerTipShow: function (e, label, index) {
+                label.html('You are viewing: <strong>' + this.markers[index].name + '</strong>');
+            },
+            onRegionOver: function (e, code) {
+                this.series.regions[code].setValues({ fill: '#FFEB3B' }); // Highlight region on hover
+            },
+            onRegionOut: function (e, code) {
+                this.series.regions[code].setValues({ fill: '#e0f7fa' }); // Reset region color
+            }
+        });
+    </script>
+    <!-- modernizr js -->
+    <script src="assets/js/modernizr-2.8.3.min.js"></script>
+    <!-- jquery latest version -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Menu js -->
+    <script src="assets/js/rsmenu-main.js"></script>
+    <!-- op nav js -->
+    <script src="assets/js/jquery.nav.js"></script>
+    <!-- owl.carousel js -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Slick js -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- isotope.pkgd.min js -->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!-- imagesloaded.pkgd.min js -->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- wow js -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Skill bar js -->
+    <script src="assets/js/skill.bars.jquery.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- counter top js -->
+    <script src="assets/js/waypoints.min.js"></script>
+    <!-- video js -->
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- plugins js -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- contact form js -->
+    <script src="assets/js/contact.form.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+
+    <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>
+
+</body>
+
+<!-- Mirrored from keenitsolutions.com/products/html/educavo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 May 2024 09:23:38 GMT -->
+
+</html>
