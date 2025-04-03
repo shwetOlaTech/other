@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summernote Editor</title>
+  <!-- Bootstrap 5 CSS -->
+  <!-- Summernote CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <style>
+    /* Ensure dropdowns in Summernote function correctly */
+    .summernote .note-btn-group {
+      z-index: 9999 !important;
+    }
+
+    .summernote .dropdown-menu {
+      z-index: 9999 !important;
+    }
+
+    .summernote .modal-content {
+      background-color: white !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container mt-4">
+    <div class="col-8">
+      <div class="summernote"></div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <!-- Bootstrap 5 Bundle JS (includes Popper) -->
+  <!-- Summernote JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+  <script>
+    //  Summernote handler script
+    $(document).ready(function() {
+      $('.summernote').summernote({
+        height: 150, 
+        minHeight: null, 
+        maxHeight: null,
+        innerWidth: 100,
+        toolbar: [
+          ['style', ['bold', 'italic', 'underline', 'clear', 'strikethrough', 'superscript', 'subscript']],
+          ['font', ['fontname', 'fontsize', 'color']],
+          ['para', ['ul', 'ol', 'paragraph', 'align']],
+          ['insert', ['table', 'link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+      fontNamesIgnoreCheck: ['Arial'],
+        fontSizes: ['8', '10', '12', '14', '16', '18', '20', '24', '36', '48'],
+        popover: {
+          image: [],
+          link: [],
+          air: []
+        },
+      });
+      var noteBar = $('.note-toolbar');
+      noteBar.find('[data-toggle]').each(function() {
+        $(this).attr('data-bs-toggle', $(this).attr('data-toggle')).removeAttr('data-toggle');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
